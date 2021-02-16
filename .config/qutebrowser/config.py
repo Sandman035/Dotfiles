@@ -2,8 +2,12 @@ c.auto_save.session = True
 c.input.insert_mode.auto_leave = False
 c.input.insert_mode.auto_load = True
 c.url.default_page = 'https://www.google.com'
-c.url.start_pages = ['https://www.goodle.com']
+c.url.start_pages = ['https://www.google.com']
+c.input.insert_mode.leave_on_load = False
 #c.url.searchengines = {'Google' : 'https://www.google.com/search?hl=en&q={}'}
+config.bind(',m', 'spawn mpv {url}')
+config.load_autoconfig()
+#c.content.proxy = 'socks://localhost:9050/'
 
 palette = {
     'background': '#282a36',

@@ -1,0 +1,14 @@
+be5a452dd999bd920376c85c99f0f384
+::res://::1609968028
+default_env.tres::Environment::1609968019::0::1::::<><>::
+icon.png::StreamTexture::1609195708::1609195718::1::::<><>::
+::res://Assets/::1609253224
+::res://Prefabs/::1609968019
+Bullet.tscn::PackedScene::1609968003::0::1::::<><>::res://icon.png
+Player.tscn::PackedScene::1609968019::0::1::::<><>::res://icon.png<>res://Scripts/PlayerMovement.gd<>res://Scripts/Shooting.gd
+::res://Scenes/::1609967918
+Test Level.tscn::PackedScene::1609967918::0::1::::<><>::res://icon.png<>res://Prefabs/Player.tscn
+::res://Scripts/::1609967822
+Health.gd::GDScript::1609601685::0::1::::<>Node<>::
+PlayerMovement.gd::GDScript::1609966841::0::1::::<>KinematicBody2D<>::
+Shooting.gd::GDScript::1609967822::0::1::::<>KinematicBody2D<>::res://Prefabs/Bullet.tscn

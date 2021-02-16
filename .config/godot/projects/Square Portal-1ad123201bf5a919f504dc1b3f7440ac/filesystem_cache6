@@ -1,0 +1,12 @@
+be5a452dd999bd920376c85c99f0f384
+::res://::1612042502
+default_env.tres::Environment::1611802680::0::1::::<><>::
+icon.png::StreamTexture::1611243440::1611243448::1::::<><>::
+::res://Assets/::1611258221
+Square.jpg::StreamTexture::1611258214::1611258221::1::::<><>::
+::res://Prefabs/::1611802680
+Player.tscn::PackedScene::1611802680::0::1::::<><>::res://Scripts/Movement.gd<>res://Assets/Square.jpg
+::res://Scenes/::1611787712
+Test World.tscn::PackedScene::1611787712::0::1::::<><>::res://Assets/Square.jpg<>res://Prefabs/Player.tscn
+::res://Scripts/::1611848142
+Movement.gd::GDScript::1611802680::0::1::::<>KinematicBody2D<>::
