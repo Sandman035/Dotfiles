@@ -1,0 +1,33 @@
+be5a452dd999bd920376c85c99f0f384
+::res://::1614898932
+default_env.tres::Environment::1614888389::0::1::::<><>::
+icon.png::StreamTexture::1611243440::1611243448::1::::<><>::
+::res://Assets/::1614888391
+Comment.jpg::StreamTexture::1614371817::1614371819::1::::<><>::
+CurrentLine.jpg::StreamTexture::1614372719::1614372761::1::::<><>::
+Foreground.jpg::StreamTexture::1614371659::1614371661::1::::<><>::
+godot_theme.tres::Theme::1614888391::0::1::::<><>::res://Assets/Hack-Regular.ttf
+Hack-Regular.ttf::DynamicFontData::1520300580::0::1::::<><>::
+Orange.jpg::StreamTexture::1614370262::1614370268::1::::<><>::
+Square (copy 3).jpg::StreamTexture::1611258214::1614372633::1::::<><>::
+Square.jpg::StreamTexture::1611258214::1611258221::1::::<><>::
+::res://Prefabs/::1614381599
+Bloom.tscn::PackedScene::1614381470::0::1::::<><>::
+Camera.tscn::PackedScene::1614208892::0::1::::<><>::res://Scripts/Camera.gd
+floor.tscn::PackedScene::1614381599::0::1::::<><>::res://Assets/Comment.jpg
+Lava.tscn::PackedScene::1614381599::0::1::::<><>::res://Assets/Orange.jpg<>res://Scripts/Lava.gd
+Player.tscn::PackedScene::1614381599::0::1::::<><>::res://Scripts/Movement.gd<>res://Assets/Foreground.jpg
+player_spawn.tscn::PackedScene::1614377027::0::1::::<><>::
+spawn_triggers.tscn::PackedScene::1614381599::0::1::::<><>::res://Scripts/spawn_triggers.gd
+TeleporterEntrance.tscn::PackedScene::1614369764::0::1::::<><>::res://Scripts/TeleporterEntrance.gd
+TeleporterExit.tscn::PackedScene::1614369765::0::1::::<><>::
+::res://Scenes/::1614888389
+MainMenu.gd::GDScript::1614871944::0::1::::<>Control<>::
+MainMenu.tscn::PackedScene::1614888389::0::1::::<><>::res://Assets/godot_theme.tres<>res://Scenes/MainMenu.gd
+Test World.tscn::PackedScene::1614871969::0::1::::<><>::res://Prefabs/floor.tscn<>res://Prefabs/Player.tscn<>res://Prefabs/Camera.tscn<>res://Prefabs/Lava.tscn<>res://Prefabs/player_spawn.tscn<>res://Prefabs/spawn_triggers.tscn
+::res://Scripts/::1614631118
+Camera.gd::GDScript::1614380124::0::1::::<>Camera2D<>::
+Lava.gd::GDScript::1614377024::0::1::::<>Area2D<>::
+Movement.gd::GDScript::1614631118::0::1::::<>KinematicBody2D<>::
+spawn_triggers.gd::GDScript::1614377480::0::1::::<>Area2D<>::
+TeleporterEntrance.gd::GDScript::1614367066::0::1::::<>Area2D<>::
