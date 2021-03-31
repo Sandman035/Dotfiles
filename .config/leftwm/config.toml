@@ -10,7 +10,7 @@ key = "p"
 
 [[keybind]]
 command = "Execute"
-value = "termite"
+value = "alacritty"
 modifier = ["modkey", "Shift"]
 key = "Return"
 
