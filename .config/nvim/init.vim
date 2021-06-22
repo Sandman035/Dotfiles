@@ -1,31 +1,50 @@
-" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
-" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing archlinux.vim since it alters the value of the
-" 'compatible' option.
+""""""""""""""""""""""""""""
+"                          "
+"       Nvim Settings      "
+"                          "
+""""""""""""""""""""""""""""
 
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages.
 runtime! archlinux.vim
 
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim80/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
+set nowrap
 
-" do not load defaults if ~/.vimrc is missing
-"let skip_defaults_vim=1
-"
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap {<CR> {<CR>}<Esc>O
+inoremap [ []<Esc>i
+inoremap < <><Esc>i
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
+
+set t_ZH=^[[3m
+set t_ZR=^[[23m
+
+set updatetime=300
+
+set tabstop=4
+set softtabstop=0 noexpandtab
+set shiftwidth=4
+
+nnoremap <F5> :!make <enter>
+
+""""""""""""""""""""""""""""
+"                          "
+"       Plugin list        "
+"                          "
+""""""""""""""""""""""""""""
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'ntk148v/vim-horizon'
-"Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'bfrg/vim-cpp-modern'
+Plug 'octol/vim-cpp-enhanced-highlight'
+"'Plug 'bfrg/vim-cpp-modern'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
@@ -41,40 +60,28 @@ Plug 'tikhomirov/vim-glsl'
 
 call plug#end()
 
-set termguicolors
-
-"colorscheme horizon
-colorscheme onedark
-
-let g:lightline = {'colorscheme' : 'one'}
-hi Normal guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
-set number
-
-"let g:airline_theme = 'transparent'
-
-set updatetime=300
-
-set tabstop=4
-set softtabstop=0 noexpandtab
-set shiftwidth=4
+""""""""""""""""""""""""""""
+"                          "
+"      Plugin Settings     "
+"                          "
+""""""""""""""""""""""""""""
 
 let g:fzf_layout = { 'down': '40%' }
 
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+			\ { 'fg':      ['fg', 'Normal'],
+			\ 'bg':      ['bg', 'Normal'],
+			\ 'hl':      ['fg', 'Comment'],
+			\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+			\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+			\ 'hl+':     ['fg', 'Statement'],
+			\ 'info':    ['fg', 'PreProc'],
+			\ 'border':  ['fg', 'Ignore'],
+			\ 'prompt':  ['fg', 'Conditional'],
+			\ 'pointer': ['fg', 'Exception'],
+			\ 'marker':  ['fg', 'Keyword'],
+			\ 'spinner': ['fg', 'Label'],
+			\ 'header':  ['fg', 'Comment'] }
 
 
 nnoremap <silent> <C-f> :Files<CR>
@@ -84,36 +91,55 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+			\ pumvisible() ? "\<C-n>" :
+			\ <SID>check_back_space() ? "\<TAB>" :
+			\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+			\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	elseif (coc#rpc#ready())
+		call CocActionAsync('doHover')
+	else
+		execute '!' . &keywordprg . " " . expand('<cword>')
+	endif
 endfunction
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-nnoremap <F5> :!make <enter>
+""""""""""""""""""""""""""""
+"                          "
+"     Syntax Settings      "
+"                          "
+""""""""""""""""""""""""""""
+
+set termguicolors
+
+colorscheme onedark
+let g:onedark_terminal_italics = 1
+
+let g:lightline = {'colorscheme' : 'one'}
+hi Normal guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+set number
+
+highlight Comment gui=italic
+highlight Function gui=italic
 
